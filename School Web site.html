@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Future School</title>
+    <!-- Simple, clean blue/white color theme -->
+    <style>
+        /* RESET STYLES AND BASE FONT */
+        * {
+            box-sizing: border-box;
+            margin: 0; padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #03922b;
+            line-height: 1.6;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        /* HEADER STYLES */
+        header {
+            background: #03922b;
+            color: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .school-name {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 2rem;
+        }
+        nav ul li a {
+            font-size: 1rem;
+            padding: .25rem .5rem;
+            border-radius: 3px;
+            transition: background 0.2s;
+        }
+        nav ul li a:hover {
+            background: #fff;
+            color: #03922b;
+        }
+
+        /* SECTION STYLES */
+        section {
+            padding: 3rem 0;
+        }
+
+        /* HOME/BANNER SECTION */
+        #home {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .banner-img {
+            height: 180px;
+            width: 100%;
+            max-width: 700px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(23,105,170,0.07);
+        }
+        .home-welcome {
+            font-size: 2rem;
+            margin-bottom: .75rem;
+        }
+        .home-desc {
+            font-size: 1.15rem;
+            color: #555e70;
+        }
+        .welcome-btn {
+            margin-top: 1rem;
+            padding: .6rem 1.3rem;
+            border: none;
+            background: #03922b;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 1.06rem;
+            cursor: pointer;
+            transition: background 0.21s, transform 0.15s;
+        }
+        .welcome-btn:hover {
+            background: #03922b;
+            transform: translateY(-2px) scale(1.03);
+        }
+
+        /* ABOUT SECTION */
+        #about {
+            background: #e9f2fa;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        .about-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: .6rem;
+            color: #03922b;
+        }
+        .about-desc {
+            font-size: 1.08rem;
+            color: #43536c;
+        }
+
+        /* COURSES SECTION */
+        #courses {
+            margin-bottom: 2rem;
+        }
+        .courses-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1.1rem;
+            color: #03922b;
+            text-align: center;
+        }
+        .courses-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.7rem;
+            justify-content: center;
+        }
+        .course-card {
+            background: #fff;
+            border-radius: 9px;
+            box-shadow: 0 2px 14px rgba(23,105,170,0.08);
+            padding: 1.15rem 1.3rem;
+            width: 270px;
+            min-height: 135px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            transition: box-shadow 0.19s;
+        }
+        .course-card:hover {
+            box-shadow: 0 3px 18px rgba(23,105,170,0.18);
+        }
+        .course-title {
+            font-weight: 600;
+            font-size: 1.13rem;
+            color: #03922b;
+            margin-bottom: .3rem;
+        }
+        .course-desc {
+            color: #555e70;
+            font-size: .99rem;
+        }
+
+        /* CONTACT SECTION */
+        #contact {
+            background: #e9f2fa;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        .contact-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #03922b;
+            margin-bottom: .7rem;
+        }
+        .contact-form {
+            max-width: 450px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.15rem;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group label {
+            margin-bottom: .33rem;
+            font-weight: 500;
+        }
+        .form-group input,
+        .form-group textarea {
+            padding: .5rem .75rem;
+            border: 1.5px solid #b2cbdf;
+            border-radius: 5px;
+            font-size: 1rem;
+            resize: none;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #03922b;
+        }
+        .contact-btn {
+            background: #03922b;
+            color: #fff;
+            border: none;
+            padding: .65rem 1.2rem;
+            font-size: 1.06rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: .4rem;
+            transition: background 0.21s, transform 0.15s;
+        }
+        .contact-btn:hover {
+            background: #03922b;
+            transform: translateY(-2px) scale(1.03);
+        }
+        .form-error {
+            color: #d32f2f;
+            font-size: .96rem;
+            margin-top: .15rem;
+            display: none;
+        }
+
+        /* RESPONSIVENESS */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1.1rem;
+            }
+            .courses-list {
+                flex-direction: column;
+                gap: 1.1rem;
+                align-items: center;
+            }
+            .container {
+                width: 98%;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .school-name {
+                font-size: 1.12rem;
+            }
+            nav ul {
+                gap: .4rem;
+            }
+            section {
+                padding: 2.2rem 0;
+            }
+            .course-card, .contact-form {
+                width: 95vw;
+                max-width: 96vw;
+            }
+            .banner-img {
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER section with school name & navigation -->
+    <header>
+        <div class="container nav-container">
+            <div class="school-name">Montfort School</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HOME Section with welcome and banner image -->
+    <section id="home" class="container">
+        <img
+            src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=900&q=80"
+            alt="School Banner" class="banner-img">
+        <h1 class="home-welcome">Welcome to Bright Future School!</h1>
+        <p class="home-desc">
+            Empowering students to achieve academic excellence and lifelong success.<br>
+            Join our vibrant learning community today!
+        </p>
+        <button class="welcome-btn" id="showWelcomeBtn">Show Welcome Message</button>
+    </section>
+
+    <!-- ABOUT Section -->
+    <section id="about" class="container">
+        <div class="about-title">About Us</div>
+        <div class="*
+    <!-- ABOUT Section -->
+    <section id="about" class="container">
+        <div class="about-title">About Us</div>
+        <div class="about-desc">
+            Bright Future School is dedicated to providing quality education in a caring atmosphere.
+            Our mission is to nurture, inspire, and prepare students to excel both academically and personally.
+            With experienced teachers and modern facilities, we create an environment where every child can thrive.
+        </div>
+    </section>
+
+    <!-- COURSES Section -->
+    <section id="courses" class="container">
+        <div class="courses-title">Our Courses</div>
+        <div class="courses-list">
+            <div class="course-card">
+                <div class="course-title">Mathematics</div>
+                <div class="course-desc">
+                    Develop your logical thinking and problem-solving skills, from foundational concepts to advanced math topics.
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-title">Science</div>
+                <div class="course-desc">
+                    Explore the natural world through hands-on experiments and engaging science projects in biology, physics, and chemistry.
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-title">English Language Arts</div>
+                <div class="course-desc">
+                    Enhance reading, writing, and communication skills with literature, creative writing, and public speaking.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT Section -->
+    <section id="contact" class="container">
+        <div class="contact-title">Contact Us</div>
+        <form id="contactForm" class="contact-form" autocomplete="off" novalidate>
+            <div class="form-group">
+                <label for="name">Name<span style="color: #d32f2f;"> *</span></label>
+                <input type="text" id="name" name="name" placeholder="Your Name">
+                <span class="form-error" id="nameError"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email<span style="color: #d32f2f;"> *</span></label>
+                <input type="email" id="email" name="email" placeholder="Your Email">
+                <span class="form-error" id="emailError"></span>
+            </div>
+            <div class="form-group">
+                <label for="message">Message<span style="color: #d32f2f;"> *</span></label>
+                <textarea id="message" name="message" rows="4" placeholder="Type your message..."></textarea>
+                <span class="form-error" id="messageError"></span>
+            </div>
+            <button class="contact-btn" type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- JavaScript for interactivity and validation -->
+    <script>
+        // Helper function to validate email with a simple regex
+        function isValidEmail(email) {
+            // Simple email pattern for demonstration (not fully RFC valid)
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        // Contact form validation and submit
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form elements
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+            let valid = true;
+
+            // Clear previous errors
+            document.getElementById('nameError').style.display = 'none';
+            document.getElementById('emailError').style.display = 'none';
+            document.getElementById('messageError').style.display = 'none';
+
+            // Validate Name
+            if (!nameInput.value.trim()) {
+                document.getElementById('nameError').textContent = 'Please enter your name.';
+                document.getElementById('nameError').style.display = 'block';
+                valid = false;
+            }
+
+            // Validate Email
+            if (!emailInput.value.trim()) {
+                document.getElementById('emailError').textContent = 'Please enter your email.';
+                document.getElementById('emailError').style.display = 'block';
+                valid = false;
+            } else if (!isValidEmail(emailInput.value.trim())) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email address.';
+                document.getElementById('emailError').style.display = 'block';
+                valid = false;
+            }
+
+            // Validate Message
+            if (!messageInput.value.trim()) {
+                document.getElementById('messageError').textContent = 'Please enter your message.';
+                document.getElementById('messageError').style.display = 'block';
+                valid = false;
+            }
+
+            // If valid, show alert and reset form
+            if (valid) {
+                alert("Thank you for contacting us! We'll get back to you soon.");
+                // Reset the form
+                nameInput.value = '';
+                emailInput.value = '';
+                messageInput.value = '';
+            }
+        });
+
+        // Interactive feature: Show a welcome message button
+        document.getElementById('showWelcomeBtn').addEventListener('click', function () {
+            alert('Welcome to our school!');
+        });
+
+        // Optional: Smooth scroll for navigation links (for better user experience)
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                // For same-page links only
+                if (this.hash) {
+                    e.preventDefault();
+                    const targetSection = document.querySelector(this.hash);
+                    if(targetSection){
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 62, // minus header height
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // ========== END OF SCRIPT ==========
+    </script>
+</body>
+</html>
